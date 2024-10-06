@@ -40,6 +40,7 @@ setup(
     entry_points={
         'console_scripts': [
             'bno055 = bno055.bno055:main',
+            'bno055_lifecycle = bno055.bno055_lifecycle:main',
         ],
     },
 )
