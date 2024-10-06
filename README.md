@@ -139,6 +139,24 @@ Run with customized parameter file:
 Run launch file:
 
     ros2 launch bno055 bno055.launch.py
+
+### Running the ROS2 lifecycle node
+Run the `bno055` ROS2 lifecycle node with default parameters:
+
+    # source your local workspace (overlay) in addition to the ROS2 sourcing (underlay):
+    source ~/ros2_ws/install/setup.sh
+    # run the node:
+    ros2 run bno055 bno055_lifecycle
+    
+Run with customized parameter file:
+
+    ros2 run bno055 bno055_lifecycle --ros-args --params-file ./src/bno055/bno055/params/bno055_params.yaml
+    
+Run launch file:
+
+    ros2 launch bno055 bno055_lifecycle.launch.py
+
+Note: The state of the lifecycle node must be changed from a separate terminal. The launch file automatically configures the lifecycle node and sets it to the `INACTIVE` state. From a separate terminal, run: `ros2 lifecycle set /bno055 activate` to set it to `ACTIVE` state.
     
 
 ### Performing flake8 Linting
